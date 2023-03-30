@@ -10,15 +10,15 @@ int crct_ans = 0;
 int user_ans = 0;
 int new_record = 0;
 
-int Get_Random_Number() //»ñÈ¡Ò»¸ö0~100µÄËæ»úÊı
+int Get_Random_Number() //è·å–ä¸€ä¸ª0~100çš„éšæœºæ•°
 {
 	srand(time(NULL));
-	//ÓÃÏµÍ³Ê±¼äÎªrandº¯ÊıÉèÖÃËæ»úÊıÖÖ×Ó£¬Õâ¸ö²Ù×÷ÊÇ±ØĞëµÄ¡£
-	return (int)rand()%5+1;
-	//randº¯Êı·µ»ØÖµÊÇ0~32767£¬´Ë´¦Ê¹ÓÃÈ¡ÓàÊıµÄ·½·¨¿ØÖÆ±»²ÂÊı×ÖµÄ´óĞ¡·¶Î§
+	//ç”¨ç³»ç»Ÿæ—¶é—´ä¸ºrandå‡½æ•°è®¾ç½®éšæœºæ•°ç§å­ï¼Œè¿™ä¸ªæ“ä½œæ˜¯å¿…é¡»çš„ã€‚
+	return (int)rand()%100+1;
+	//randå‡½æ•°è¿”å›å€¼æ˜¯0~32767ï¼Œæ­¤å¤„ä½¿ç”¨å–ä½™æ•°çš„æ–¹æ³•æ§åˆ¶è¢«çŒœæ•°å­—çš„å¤§å°èŒƒå›´
 }
 
-int is_Number(char ch[]) //ÅĞ¶ÏÊäÈëµÄ×Ö·û´®ÊÇ²»ÊÇÒ»¸öºÏ·¨Êı×Ö
+int is_Number(char ch[]) //åˆ¤æ–­è¾“å…¥çš„å­—ç¬¦ä¸²æ˜¯ä¸æ˜¯ä¸€ä¸ªåˆæ³•æ•°å­—
 {
 	for (int i = 0; i < strlen(ch); i++)
 	{
@@ -32,26 +32,26 @@ int is_Number(char ch[]) //ÅĞ¶ÏÊäÈëµÄ×Ö·û´®ÊÇ²»ÊÇÒ»¸öºÏ·¨Êı×Ö
 }
 
 
-void Get_Started()//¿ªÊ¼
+void Get_Started()//å¼€å§‹
 {	
 	printf("Game started, please enter a number between 1 and 100.\n");
 	Guess();	
 }
 
-int Guess()//ÊäÈë²¢ÅĞ¶ÏÊÇ·ñºÏ·¨£¬Èç¹ûºÏ·¨£¬½øÈë±È½Ï
+int Guess()//è¾“å…¥å¹¶åˆ¤æ–­æ˜¯å¦åˆæ³•ï¼Œå¦‚æœåˆæ³•ï¼Œè¿›å…¥æ¯”è¾ƒ
 {
 	char ch[20] = { 0 };
 	printf("New guess:\n");
 	scanf("%s", ch);
-	if (is_Number(ch) == 0)//Èç¹ûÊäÈë²»ºÏ·¨£¬ÔòÖØĞÂ¿ªÊ¼
+	if (is_Number(ch) == 0)//å¦‚æœè¾“å…¥ä¸åˆæ³•ï¼Œåˆ™é‡æ–°å¼€å§‹
 		Guess();
-	user_ans = atoi(ch);//½«ch×Ö·û´®×ª»¯Îªint
+	user_ans = atoi(ch);//å°†chå­—ç¬¦ä¸²è½¬åŒ–ä¸ºint
 	return(Cmp_Ans(crct_ans, user_ans));
 }
 
-int Cmp_Ans(int crct_ans, int user_ans)//±È½ÏÓÃ»§ÊäÈë½á¹ûºÍÕıÈ·½á¹û£¬Èç¹ûÕıÈ·¾ÍÊä³ö×Ü³¢ÊÔ´ÎÊı£¬Èç¹û´íÎóÔòÌáÊ¾²Â´óÁË»òÕß²ÂĞ¡ÁË
+int Cmp_Ans(int crct_ans, int user_ans)//æ¯”è¾ƒç”¨æˆ·è¾“å…¥ç»“æœå’Œæ­£ç¡®ç»“æœï¼Œå¦‚æœæ­£ç¡®å°±è¾“å‡ºæ€»å°è¯•æ¬¡æ•°ï¼Œå¦‚æœé”™è¯¯åˆ™æç¤ºçŒœå¤§äº†æˆ–è€…çŒœå°äº†
 {
-	new_record++;//¼ÇÂ¼³¢ÊÔ´ÎÊıµÄ±äÁ¿
+	new_record++;//è®°å½•å°è¯•æ¬¡æ•°çš„å˜é‡
 	if (crct_ans == user_ans)
 	{
 		printf("Your answer is correct!You have guessed %d times! \n",new_record);
@@ -70,19 +70,19 @@ int Cmp_Ans(int crct_ans, int user_ans)//±È½ÏÓÃ»§ÊäÈë½á¹ûºÍÕıÈ·½á¹û£¬Èç¹ûÕıÈ·¾ÍÊ
 }
 
 
-int record() //ÎÄ¼ş²Ù×÷£¬±£´æ¼ÇÂ¼£¬Èç¹û´òÆÆ×î¼Ñ¼ÍÂ¼£¬Ôò¸üĞÂ×î¼Ñ¼ÍÂ¼¡£Êä³ö×î¼Ñ¼ÍÂ¼
+int record() //æ–‡ä»¶æ“ä½œï¼Œä¿å­˜è®°å½•ï¼Œå¦‚æœæ‰“ç ´æœ€ä½³çºªå½•ï¼Œåˆ™æ›´æ–°æœ€ä½³çºªå½•ã€‚è¾“å‡ºæœ€ä½³çºªå½•
 {
 	FILE* fp;
 	int top_record = 0;
 	fp = fopen("record.txt", "a+");
 	if (fp == NULL) {
-		printf("ÎÄ¼ş´ò¿ªÊ§°Ü¡£\n");
+		printf("æ–‡ä»¶æ‰“å¼€å¤±è´¥ã€‚\n");
 		return 1;
 	}	
-	fprintf(fp, "%d\n", new_record);//ÔÚÄ©Î²´òÓ¡´Ë´Î¼ÇÂ¼
+	fprintf(fp, "%d\n", new_record);//åœ¨æœ«å°¾æ‰“å°æ­¤æ¬¡è®°å½•
 	fseek(fp, 0, SEEK_SET);
-	fscanf(fp, "%d\n", &top_record);//ÎÄ¼şµÄµÚÒ»ĞĞÊÇ×î¸ß¼ÍÂ¼£¬¶ÁÈ¡¸ÃÖµ
-	if (top_record > new_record)//±È½Ï´Ë´Î¼ÇÂ¼ºÍ×î¸ß¼ÍÂ¼£¬Èç¹û´Ë´Î¼ÇÂ¼¸üĞ¡£¨¸üºÃ£©£¬¾Í½«Æä±£´æÔÚÎÄ¼ş¿ªÍ·¡£
+	fscanf(fp, "%d\n", &top_record);//æ–‡ä»¶çš„ç¬¬ä¸€è¡Œæ˜¯æœ€é«˜çºªå½•ï¼Œè¯»å–è¯¥å€¼
+	if (top_record > new_record)//æ¯”è¾ƒæ­¤æ¬¡è®°å½•å’Œæœ€é«˜çºªå½•ï¼Œå¦‚æœæ­¤æ¬¡è®°å½•æ›´å°ï¼ˆæ›´å¥½ï¼‰ï¼Œå°±å°†å…¶ä¿å­˜åœ¨æ–‡ä»¶å¼€å¤´ã€‚
 	{
 		fprintf(fp, "%d\n", new_record);
 		top_record = new_record;
@@ -92,18 +92,18 @@ int record() //ÎÄ¼ş²Ù×÷£¬±£´æ¼ÇÂ¼£¬Èç¹û´òÆÆ×î¼Ñ¼ÍÂ¼£¬Ôò¸üĞÂ×î¼Ñ¼ÍÂ¼¡£Êä³ö×î¼Ñ¼ÍÂ
 	return 0;
 }
 
-int main() //ÎªÁË·½±ãÖØĞÂÓÎÏ·£¬Ö÷º¯ÊıÖĞÊÇÒ»¸ödo whileÑ­»·¡£
+int main() //ä¸ºäº†æ–¹ä¾¿é‡æ–°æ¸¸æˆï¼Œä¸»å‡½æ•°ä¸­æ˜¯ä¸€ä¸ªdo whileå¾ªç¯ã€‚
 {	
 	do {
 		system("cls");
-		new_record = 0;//³õÊ¼»¯´ÎÊı¼ÇÂ¼±äÁ¿£¬·ñÔò»áÎŞÏŞÀÛ¼Ó¡£
+		new_record = 0;//åˆå§‹åŒ–æ¬¡æ•°è®°å½•å˜é‡ï¼Œå¦åˆ™ä¼šæ— é™ç´¯åŠ ã€‚
 		printf("**********WELCOME TO NUMBER GUESS**********\n");
-		crct_ans = Get_Random_Number();//³õÊ¼»¯ÕâÒ»ÂÖÒª²ÂµÄÊı×Ö
+		crct_ans = Get_Random_Number();//åˆå§‹åŒ–è¿™ä¸€è½®è¦çŒœçš„æ•°å­—
 		Get_Started();
 		record();	
 		printf("Press any key to restart;Enter '0' to exit.\n");
 		
-	} while (_getch()!= 48);//48ÊÇ0µÄasciiÂëÖµ
-	//Ñ­»·ÊäÈë£¬ÕâÑù¿ÉÒÔÖØ¸´½øĞĞÓÎÏ·£¬¶ø²»ÊÇÃ¿´Î¶¼ÒªÖØĞÂ´ò¿ª
+	} while (_getch()!= 48);//48æ˜¯0çš„asciiç å€¼
+	//å¾ªç¯è¾“å…¥ï¼Œè¿™æ ·å¯ä»¥é‡å¤è¿›è¡Œæ¸¸æˆï¼Œè€Œä¸æ˜¯æ¯æ¬¡éƒ½è¦é‡æ–°æ‰“å¼€
 	return 0;
 }
