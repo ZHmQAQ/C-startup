@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int gcd(int a, int b)//辗转相除法求最大公因数
+int gcd(int a, int b)//杈楄浆鐩搁櫎娉曟眰鏈�澶у叕鍥犳暟
 {
 	int c = a % b;
 	if (c == 0)
@@ -8,7 +8,7 @@ int gcd(int a, int b)//辗转相除法求最大公因数
 	else
 		return gcd(b, c);
 }
-//测试
+//娴嬭瘯
 //int main()
 //{
 //	printf("%d\n", gcd(20, 12));
