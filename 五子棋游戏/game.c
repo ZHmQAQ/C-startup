@@ -5,7 +5,7 @@
 
 void InitBoard(char board[ROW][COL], int row, int col)
 {
-	//³õÊ¼»¯ÆåÅÌ
+	//åˆå§‹åŒ–æ£‹ç›˜
 	int i = 0;
 	int j = 0;
 	for (i = 0; i < ROW; i++)
@@ -19,28 +19,28 @@ void InitBoard(char board[ROW][COL], int row, int col)
 
 void DisplayBoard(char board[ROW][COL], int row, int col)
 {
-	//ÏÔÊ¾ÆåÅÌ
+	//æ˜¾ç¤ºæ£‹ç›˜
 	printf("   ");
 	for (int k = 0; k < col; k++)
-		printf("|%3d",k);//´òÓ¡ĞĞ±ê
+		printf("|%3d",k);//æ‰“å°è¡Œæ ‡
 	printf("|\n");
 	for (int i = 0; i < row; i++)
 	{
 		printf("---");
 		for (int k = 0; k < col; k++)
-			printf("|---");//´òÓ¡ÆåÅÌµÄĞĞ
+			printf("|---");//æ‰“å°æ£‹ç›˜çš„è¡Œ
 		printf("|\n");
 
 		printf("%-3d", i);
 		for (int j = 0;j<col;j++)
-			printf("| %c ",board[i][j]);//°´ĞĞ´òÓ¡ÆåÅÌÔªËØ
+			printf("| %c ",board[i][j]);//æŒ‰è¡Œæ‰“å°æ£‹ç›˜å…ƒç´ 
 		printf("|\n");
 	}
 	for (int k = 0; k < col; k++)
-		printf("---|");//´òÓ¡×îºóÒ»ĞĞÆåÅÌ±ßÔµ
+		printf("---|");//æ‰“å°æœ€åä¸€è¡Œæ£‹ç›˜è¾¹ç¼˜
 	printf("---|\n   ");
 	for (int k = 0; k < col; k++)
-		printf("|%3d", k);//´òÓ¡ĞĞ±ê
+		printf("|%3d", k);//æ‰“å°è¡Œæ ‡
 	printf("|\n");
 	printf(" ");
 }
@@ -51,7 +51,7 @@ void PlayerMove(char board[ROW][COL], int raw, int col)
 	{
 	int x = 0;
 	int y = 0;
-	printf("*Íæ¼ÒĞĞ¶¯*\nÊäÈëºá ×İ£¬ÒÔ¿Õ¸ñ¸ô¿ª\nÇëÊäÈë×ø±ê-> ");
+	printf("*ç©å®¶è¡ŒåŠ¨*\nè¾“å…¥æ¨ª çºµï¼Œä»¥ç©ºæ ¼éš”å¼€\nè¯·è¾“å…¥åæ ‡-> ");
 	scanf_s("%d %d", &y, &x);
 
 		if (x >= 0 && x < raw && y >= 0 && y < col)
@@ -62,11 +62,11 @@ void PlayerMove(char board[ROW][COL], int raw, int col)
 			break;
 			}
 			else
-				printf("²»ÄÜÏÂÔÚÕâÀï¡£\n");
+				printf("ä¸èƒ½ä¸‹åœ¨è¿™é‡Œã€‚\n");
 		}
 		else
 		{
-			printf("×ø±ê·Ç·¨£¬ÇëÖØĞÂÊäÈë£¡0~%d 0~%d\n",raw,col);
+			printf("åæ ‡éæ³•ï¼Œè¯·é‡æ–°è¾“å…¥ï¼0~%d 0~%d\n",raw,col);
 		}
 	}
 	system("cls");
@@ -76,8 +76,8 @@ void ComputerMove(char board[ROW][COL], int raw, int col)
 {
 	int x = 0;
 	int y = 0;
-	printf("*µçÄÔĞĞ¶¯*\n");
-	//SendBoardData(board,ROW,COL);//°ÑÏÖÔÚµÄÆåÅÌÊı¾İ·¢ËÍµ½Ai
+	printf("*ç”µè„‘è¡ŒåŠ¨*\n");
+	//SendBoardData(board,ROW,COL);//æŠŠç°åœ¨çš„æ£‹ç›˜æ•°æ®å‘é€åˆ°Ai
 	while (1)
 	{
 		int x = 0;
@@ -91,11 +91,11 @@ void ComputerMove(char board[ROW][COL], int raw, int col)
 				break;
 			}
 			else
-				printf("²»ÄÜÏÂÔÚÕâÀï¡£\n");
+				printf("ä¸èƒ½ä¸‹åœ¨è¿™é‡Œã€‚\n");
 		}
 		else
 		{
-			printf("×ø±ê·Ç·¨£¬ÇëÖØĞÂÊäÈë£¡0~%d 0~%d\n", raw, col);
+			printf("åæ ‡éæ³•ï¼Œè¯·é‡æ–°è¾“å…¥ï¼0~%d 0~%d\n", raw, col);
 		}
 	}
 	system("cls");
@@ -110,16 +110,16 @@ int WuziqiWin(char ch, char board[ROW][COL], int row, int col)
 		{
 			if (board[i][j] == ch)
 			{
-				if ((board[i][j] == board[i][j + 5] && board[i][j] == board[i][j + 1] && board[i][j] == board[i][j + 2] && board[i][j] == board[i][j + 3] && board[i][j] == board[i][j + 4]) ||  //ºáÏòÏàµÈ
-					(board[i][j] == board[i + 5][j + 5] && board[i][j] == board[i + 1][j + 1] && board[i][j] == board[i + 2][j + 2] && board[i][j] == board[i + 3][j + 3] && board[i][j] == board[i + 4][j + 4]) || //Ğ±ÏòÓÒÏÂÏàµÈ
-					(board[i][j] == board[i + 5][j] && board[i][j] == board[i + 1][j] && board[i][j] == board[i + 2][j] && board[i][j] == board[i + 3][j] && board[i][j] == board[i + 4][j]) ||//×İÏòÏàµÈ
-					(board[i][j] == board[i + 5][j - 5] && board[i][j] == board[i + 1][j - 1] && board[i][j] == board[i + 2][j - 2] && board[i][j] == board[i + 3][j - 3] && board[i][j] == board[i + 4][j - 4]))//Ğ±Ïò×óÏÂÏàµÈ
+				if ((board[i][j] == board[i][j + 5] && board[i][j] == board[i][j + 1] && board[i][j] == board[i][j + 2] && board[i][j] == board[i][j + 3] && board[i][j] == board[i][j + 4]) ||  //æ¨ªå‘ç›¸ç­‰
+					(board[i][j] == board[i + 5][j + 5] && board[i][j] == board[i + 1][j + 1] && board[i][j] == board[i + 2][j + 2] && board[i][j] == board[i + 3][j + 3] && board[i][j] == board[i + 4][j + 4]) || //æ–œå‘å³ä¸‹ç›¸ç­‰
+					(board[i][j] == board[i + 5][j] && board[i][j] == board[i + 1][j] && board[i][j] == board[i + 2][j] && board[i][j] == board[i + 3][j] && board[i][j] == board[i + 4][j]) ||//çºµå‘ç›¸ç­‰
+					(board[i][j] == board[i + 5][j - 5] && board[i][j] == board[i + 1][j - 1] && board[i][j] == board[i + 2][j - 2] && board[i][j] == board[i + 3][j - 3] && board[i][j] == board[i + 4][j - 4]))//æ–œå‘å·¦ä¸‹ç›¸ç­‰
 				{
-					printf("ÓÎÏ·½áÊø\n");
+					printf("æ¸¸æˆç»“æŸ\n");
 					if (ch == '*')
-						printf("Íæ¼Ò»ñÊ¤£¡£¡£¡");
+						printf("ç©å®¶è·èƒœï¼ï¼ï¼");
 					if (ch == '#')
-						printf("µçÄÔ»ñÊ¤£¡£¡£¡");
+						printf("ç”µè„‘è·èƒœï¼ï¼ï¼");
 					return 1;
 				}
 			}
