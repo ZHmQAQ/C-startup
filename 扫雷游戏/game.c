@@ -2,7 +2,7 @@
 
 void PrintWelcome()
 {
-	//ÓÎÏ·¼ÓÔØÊ±µÄÉÁË¸Ğ§¹û
+	//æ¸¸æˆåŠ è½½æ—¶çš„é—ªçƒæ•ˆæœ
 	for(int i =0;i<3;i++)
 	{
 		printf("**********WELCOME TO MINE SWEEPING**********\n");
@@ -18,8 +18,8 @@ void InitMineField(int minefield[ROW][COL], int row, int col)
 	srand(time(NULL));
 mine_set_start:	
 	;
-	int totalmine = (int)COL * ROW * DENSITY;//¼ÆËã×ÜµÄµØÀ×¸öÊı
-	int mine = 0;//ÒÑ¾­²¼ÉèµÄµØÀ×¸öÊı
+	int totalmine = (int)COL * ROW * DENSITY;//è®¡ç®—æ€»çš„åœ°é›·ä¸ªæ•°
+	int mine = 0;//å·²ç»å¸ƒè®¾çš„åœ°é›·ä¸ªæ•°
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < COL; j++)
 			minefield[i][j] = 0;
@@ -28,21 +28,21 @@ mine_set_start:
 		for (int i = 0; i < ROW; i++)
 			for (int j = 0; j < COL; j++)
 			{
-				float p = (float)rand() / RAND_MAX;//Éú³ÉÒ»¸ö0~1Ö®¼äµÄËæ»úÊı
+				float p = (float)rand() / RAND_MAX;//ç”Ÿæˆä¸€ä¸ª0~1ä¹‹é—´çš„éšæœºæ•°
 				if (p >= DENSITY / 100 && minefield [i][j]!= -1)
 					minefield[i][j] = 0;
 				else
 				{
 					if (minefield[i][j] != -1)
 						mine++;
-					minefield[i][j] = -1;//ÒÔDENSIYTY/100µÄ¸ÅÂÊ²¼ÉèµØÀ×			
+					minefield[i][j] = -1;//ä»¥DENSIYTY/100çš„æ¦‚ç‡å¸ƒè®¾åœ°é›·			
 				}
 				if (mine == totalmine)
 					goto mine_set_finish;
 			}
 	}
-mine_set_finish://µØÀ×²¼ÉèÍê±Ï£¬µ±Ç°ÓĞµØÀ×µÄÎ»ÖÃ¶¼ÊÇ-1£¬Ã»ÓĞµØÀ×µÄÎ»ÖÃ¶¼ÊÇ0
-	//printf("µØÀ×²¼ÉèÍê±Ï£¡\n");
+mine_set_finish://åœ°é›·å¸ƒè®¾å®Œæ¯•ï¼Œå½“å‰æœ‰åœ°é›·çš„ä½ç½®éƒ½æ˜¯-1ï¼Œæ²¡æœ‰åœ°é›·çš„ä½ç½®éƒ½æ˜¯0
+	//printf("åœ°é›·å¸ƒè®¾å®Œæ¯•ï¼\n");
 	//Sleep(500);
 	for (int i = 0; i < ROW; i++)
 		for (int j = 0; j < COL; j++)
@@ -79,41 +79,41 @@ mine_set_finish://µØÀ×²¼ÉèÍê±Ï£¬µ±Ç°ÓĞµØÀ×µÄÎ»ÖÃ¶¼ÊÇ-1£¬Ã»ÓĞµØÀ×µÄÎ»ÖÃ¶¼ÊÇ0
 			}
 			minefield[i][j] = count;
 		}
-	//printf("³õÊ¼»¯Íê³É£¡\n");
+	//printf("åˆå§‹åŒ–å®Œæˆï¼\n");
 	//Sleep(500);
 }
 
 void PrintMineField(char minefield_show[ROW][COL], int row, int col)
 {
-	//½èÓÃµÄ¡°Îå×ÓÆå¡±ÎÄ¼şÀïµÄ´òÓ¡ÆåÅÌµÄ´úÂë
+	//å€Ÿç”¨çš„â€œäº”å­æ£‹â€æ–‡ä»¶é‡Œçš„æ‰“å°æ£‹ç›˜çš„ä»£ç 
 	system("cls");
 	printf("   ");
 	for (int k = 0; k < COL; k++)
-		printf("|%3d", k);//´òÓ¡ĞĞ±ê
+		printf("|%3d", k);//æ‰“å°è¡Œæ ‡
 	printf("|\n");
 	for (int i = 0; i < ROW; i++)
 	{
 		printf("---");
 		for (int k = 0; k < COL; k++)
-			printf("|---");//´òÓ¡µØÀ×ÕóµÄºáÏò¼ä¸ô
+			printf("|---");//æ‰“å°åœ°é›·é˜µçš„æ¨ªå‘é—´éš”
 		printf("|\n");
 
 		printf("%-3d", i);
 		for (int j = 0; j < COL; j++)
-			printf("| %c ", minefield_show[i][j]);//°´ĞĞ´òÓ¡µØÀ×Õó
+			printf("| %c ", minefield_show[i][j]);//æŒ‰è¡Œæ‰“å°åœ°é›·é˜µ
 		printf("|\n");
 	}
 	for (int k = 0; k < COL; k++)
-		printf("---|");//´òÓ¡×îºóÒ»ĞĞµØÀ×Õó±ßÔµ
+		printf("---|");//æ‰“å°æœ€åä¸€è¡Œåœ°é›·é˜µè¾¹ç¼˜
 	printf("---|\n   ");
 	for (int k = 0; k < COL; k++)
-		printf("|%3d", k);//´òÓ¡ĞĞ±ê
+		printf("|%3d", k);//æ‰“å°è¡Œæ ‡
 	printf("|\n");
 	printf(" ");
-	printf("\nµØÀ××ÜÊı£º%d\n", (int)(COL * ROW * DENSITY));
+	printf("\nåœ°é›·æ€»æ•°ï¼š%d\n", (int)(COL * ROW * DENSITY));
 }
 
-int IndexNotOut(int x, int y)//¼ì²éÊı×éÏÂ±êÊÇ·ñÔ½½ç
+int IndexNotOut(int x, int y)//æ£€æŸ¥æ•°ç»„ä¸‹æ ‡æ˜¯å¦è¶Šç•Œ
 {
 	if (x >= 0 && x < ROW && y >= 0 && y < COL)
 		return 1;
@@ -134,39 +134,39 @@ int ChangeMineField_Show(int minefield[ROW][COL], char minefield_show[ROW][COL],
 	char op = ' ';
 	//char input[20] = { 0 };
 re_enter:
-	printf("ÊäÈëÁ½¸öÊı×Ö´ú±íºá×İ×ø±ê£¬Ò»¸ö×ÖÄ¸´ú±í²Ù×÷,ÓÃ¿Õ¸ñ»òÕß»Ø³µ¸ô¿ª¡£\nx±ê¼Ç´Ë´¦ÊÇÀ×£¬zÎªÌ½Ë÷´Ë¿é¡£\n");
+	printf("è¾“å…¥ä¸¤ä¸ªæ•°å­—ä»£è¡¨æ¨ªçºµåæ ‡ï¼Œä¸€ä¸ªå­—æ¯ä»£è¡¨æ“ä½œ,ç”¨ç©ºæ ¼æˆ–è€…å›è½¦éš”å¼€ã€‚\nxæ ‡è®°æ­¤å¤„æ˜¯é›·ï¼Œzä¸ºæ¢ç´¢æ­¤å—ã€‚\n");
 	scanf("%d %d %c", &y,&x,&op);
-	if (x ==-1||y== -1) //¼ì²éÊäÈëÊÇ·ñÊÇºÏ·¨
+	if (x ==-1||y== -1) //æ£€æŸ¥è¾“å…¥æ˜¯å¦æ˜¯åˆæ³•
 	{
-		printf("ÊäÈë²»ºÏ·¨£¬ÇëÖØĞÂÊäÈë\n");
+		printf("è¾“å…¥ä¸åˆæ³•ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 		goto re_enter;
 	}
-	if (x < 0 || x >= ROW || y < 0 || y >= COL)//¼ì²éÊäÈëÊÇ·ñÔ½½ç
+	if (x < 0 || x >= ROW || y < 0 || y >= COL)//æ£€æŸ¥è¾“å…¥æ˜¯å¦è¶Šç•Œ
 	{
-		printf("ÊäÈë²»ºÏ·¨£¬ÇëÖØĞÂÊäÈë\n");
+		printf("è¾“å…¥ä¸åˆæ³•ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 		goto re_enter;
 	}
-	if ( op == 'x')//¼ì²é±ê¼Ç
+	if ( op == 'x')//æ£€æŸ¥æ ‡è®°
 	{
 		if (minefield_show[x][y] == 'x')
 		{
-			printf("ÕâÀïÒÑ¾­±ê¼Ç¹ıÁË\n");
+			printf("è¿™é‡Œå·²ç»æ ‡è®°è¿‡äº†\n");
 			goto re_enter;
 		}
 
 		else if (isdigit(minefield_show[x][y]))
 		{
-			printf("ÕâÀïÒÑ¾­À´¹ıÁË\n");
+			printf("è¿™é‡Œå·²ç»æ¥è¿‡äº†\n");
 			goto re_enter;
 		}
 		else
 		{
-			printf("±ê¼Ç³É¹¦\n");
+			printf("æ ‡è®°æˆåŠŸ\n");
 			minefield_show[x][y] = 'x';
 			if (JudgeWin(minefield, minefield_show, ROW, COL))
 			{
 				system("cls");
-				printf("\n\n\n\n\n\n\n\n\n#*#*#*#*#*ÄãÓ®ÁË£¬»ï¼Æ*#*#*#*#*#\n");
+				printf("\n\n\n\n\n\n\n\n\n#*#*#*#*#*ä½ èµ¢äº†ï¼Œä¼™è®¡*#*#*#*#*#\n");
 				Sleep(1500);
 				return 0;
 			}
@@ -174,25 +174,25 @@ re_enter:
 				return 1;
 		}
 	}
-	else if (isdigit(minefield_show[x][y]))//¼ì²éÊäÈëµÄÎ»ÖÃÊÇ·ñÒÑ¾­±»Ì½²é¹ı
+	else if (isdigit(minefield_show[x][y]))//æ£€æŸ¥è¾“å…¥çš„ä½ç½®æ˜¯å¦å·²ç»è¢«æ¢æŸ¥è¿‡
 	{
-		printf("ÕâÀïÒÑ¾­À´¹ıÁË\n");
+		printf("è¿™é‡Œå·²ç»æ¥è¿‡äº†\n");
 			goto re_enter;
 	}
-	else if (minefield[x][y] == 0)//¼ì²éÊÇ·ñÊÇ0¸ñ×Ó£¬Èç¹ûÊÇµÄ»°£¬×Ô¶¯½Ò¿ªÖÜÎ§8¸ñ
+	else if (minefield[x][y] == 0)//æ£€æŸ¥æ˜¯å¦æ˜¯0æ ¼å­ï¼Œå¦‚æœæ˜¯çš„è¯ï¼Œè‡ªåŠ¨æ­å¼€å‘¨å›´8æ ¼
 	{
 		AutoShow(minefield, minefield_show, x, y);
 	}
-	else if (minefield[x][y] == -1 )//¼ì²éÊÇ·ñ²ÈÀ×
+	else if (minefield[x][y] == -1 )//æ£€æŸ¥æ˜¯å¦è¸©é›·
 	{
 		system("cls");
-		printf("\n\n\n\n\n\n\n\n\n#*#*#*#*#*ÄãÕ¨ÁË£¬»ï¼Æ*#*#*#*#*#\n");
+		printf("\n\n\n\n\n\n\n\n\n#*#*#*#*#*ä½ ç‚¸äº†ï¼Œä¼™è®¡*#*#*#*#*#\n");
 		Sleep(1500);
-		RevealMineField_Show(minefield, minefield_show, x, y);//ÓÎÏ·½áÊøÊ±½ÒÏşÈ«²¿µØÀ×Î»ÖÃ
+		RevealMineField_Show(minefield, minefield_show, x, y);//æ¸¸æˆç»“æŸæ—¶æ­æ™“å…¨éƒ¨åœ°é›·ä½ç½®
 		return 0;
 	}
 	else
-		minefield_show[x][y] = '0' + minefield[x][y];//Èç¹ûÊäÈëºÏ·¨£¬¶øÇÒÃ»ÓĞÕ¨£¬¶øÇÒÃ»ÓĞ±êÀ×£¬ÏÔÊ¾¸Ã¿éµÄÊı×Ö
+		minefield_show[x][y] = '0' + minefield[x][y];//å¦‚æœè¾“å…¥åˆæ³•ï¼Œè€Œä¸”æ²¡æœ‰ç‚¸ï¼Œè€Œä¸”æ²¡æœ‰æ ‡é›·ï¼Œæ˜¾ç¤ºè¯¥å—çš„æ•°å­—
 	return 1;
 }
 
@@ -202,11 +202,11 @@ void RevealMineField_Show(int minefield[ROW][COL], char minefield_show[ROW][COL]
 		for (int j = 0; j < COL; j++)
 		{
 			if (minefield[i][j] == -1 && minefield_show[i][j] == 'x')
-				minefield_show[i][j] = 'v';//±ê¶ÔÁËµÄÎ»ÖÃ
+				minefield_show[i][j] = 'v';//æ ‡å¯¹äº†çš„ä½ç½®
 			if (minefield[i][j] == -1 && minefield_show[i][j] == ' ')
-				minefield_show[i][j] = '*';//»¹Ã»±êµ½µÄÎ»ÖÃ
+				minefield_show[i][j] = '*';//è¿˜æ²¡æ ‡åˆ°çš„ä½ç½®
 		}
-	minefield_show[x][y] = 'X';//²Â´íÖ®ºóËÀÁËµÄÎ»ÖÃ
+	minefield_show[x][y] = 'X';//çŒœé”™ä¹‹åæ­»äº†çš„ä½ç½®
 }
 
 void AutoShow(int minefield[ROW][COL], char minefield_show[ROW][COL], int x, int y)
@@ -214,7 +214,7 @@ void AutoShow(int minefield[ROW][COL], char minefield_show[ROW][COL], int x, int
 	if (minefield[x][y] == 0)
 	{
 		minefield_show[x][y] = '0';
-		minefield[x][y] = -2;//±êÊ¶·û£¬·ÀÖ¹»ØÍ·É¨Ãè
+		minefield[x][y] = -2;//æ ‡è¯†ç¬¦ï¼Œé˜²æ­¢å›å¤´æ‰«æ
 		if (IndexNotOut(x - 1, y - 1))
 			if (minefield[x-1][y-1] >= 0)
 				AutoShow(minefield, minefield_show, x - 1, y - 1);
