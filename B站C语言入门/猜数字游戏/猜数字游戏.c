@@ -102,6 +102,7 @@ int main() //为了方便重新游戏，主函数中是一个do while循环。
 		Get_Started();
 		record();	
 		printf("Press any key to restart;Enter '0' to exit.\n");
+		//system("pause");
 		
 	} while (_getch()!= 48);//48是0的ascii码值
 	//循环输入，这样可以重复进行游戏，而不是每次都要重新打开
