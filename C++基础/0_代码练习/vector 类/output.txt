@@ -1,0 +1,303 @@
+Vec has been successfully created. Current Vec: 
+¡¾test0¡¿ 1 1 1 
+capacity: 3
+elementnum: 4
+capacity: 6
+
+elementnum: 5
+capacity: 6
+
+elementnum: 6
+capacity: 6
+
+elementnum: 7
+capacity: 12
+
+elementnum: 8
+capacity: 12
+
+elementnum: 9
+capacity: 12
+
+elementnum: 10
+capacity: 12
+
+elementnum: 11
+capacity: 12
+
+elementnum: 12
+capacity: 12
+
+elementnum: 13
+capacity: 24
+
+elementnum: 14
+capacity: 24
+
+elementnum: 15
+capacity: 24
+
+elementnum: 16
+capacity: 24
+
+elementnum: 17
+capacity: 24
+
+elementnum: 18
+capacity: 24
+
+elementnum: 19
+capacity: 24
+
+elementnum: 20
+capacity: 24
+
+elementnum: 21
+capacity: 24
+
+elementnum: 22
+capacity: 24
+
+elementnum: 23
+capacity: 24
+
+elementnum: 24
+capacity: 24
+
+elementnum: 25
+capacity: 48
+
+elementnum: 26
+capacity: 48
+
+elementnum: 27
+capacity: 48
+
+elementnum: 28
+capacity: 48
+
+elementnum: 29
+capacity: 48
+
+elementnum: 30
+capacity: 48
+
+elementnum: 31
+capacity: 48
+
+elementnum: 32
+capacity: 48
+
+elementnum: 33
+capacity: 48
+
+elementnum: 34
+capacity: 48
+
+elementnum: 35
+capacity: 48
+
+elementnum: 36
+capacity: 48
+
+elementnum: 37
+capacity: 48
+
+elementnum: 38
+capacity: 48
+
+elementnum: 39
+capacity: 48
+
+elementnum: 40
+capacity: 48
+
+elementnum: 41
+capacity: 48
+
+elementnum: 42
+capacity: 48
+
+elementnum: 43
+capacity: 48
+
+elementnum: 44
+capacity: 48
+
+elementnum: 45
+capacity: 48
+
+elementnum: 46
+capacity: 48
+
+elementnum: 47
+capacity: 48
+
+elementnum: 48
+capacity: 48
+
+elementnum: 49
+capacity: 96
+
+elementnum: 50
+capacity: 96
+
+elementnum: 51
+capacity: 96
+
+elementnum: 52
+capacity: 96
+
+elementnum: 53
+capacity: 96
+
+elementnum: 54
+capacity: 96
+
+elementnum: 55
+capacity: 96
+
+elementnum: 56
+capacity: 96
+
+elementnum: 57
+capacity: 96
+
+elementnum: 58
+capacity: 96
+
+elementnum: 59
+capacity: 96
+
+elementnum: 60
+capacity: 96
+
+elementnum: 61
+capacity: 96
+
+elementnum: 62
+capacity: 96
+
+elementnum: 63
+capacity: 96
+
+elementnum: 64
+capacity: 96
+
+elementnum: 65
+capacity: 96
+
+elementnum: 66
+capacity: 96
+
+elementnum: 67
+capacity: 96
+
+elementnum: 68
+capacity: 96
+
+elementnum: 69
+capacity: 96
+
+elementnum: 70
+capacity: 96
+
+elementnum: 71
+capacity: 96
+
+elementnum: 72
+capacity: 96
+
+elementnum: 73
+capacity: 96
+
+elementnum: 74
+capacity: 96
+
+elementnum: 75
+capacity: 96
+
+elementnum: 76
+capacity: 96
+
+elementnum: 77
+capacity: 96
+
+elementnum: 78
+capacity: 96
+
+elementnum: 79
+capacity: 96
+
+elementnum: 80
+capacity: 96
+
+elementnum: 81
+capacity: 96
+
+elementnum: 82
+capacity: 96
+
+elementnum: 83
+capacity: 96
+
+elementnum: 84
+capacity: 96
+
+elementnum: 85
+capacity: 96
+
+elementnum: 86
+capacity: 96
+
+elementnum: 87
+capacity: 96
+
+elementnum: 88
+capacity: 96
+
+elementnum: 89
+capacity: 96
+
+elementnum: 90
+capacity: 96
+
+elementnum: 91
+capacity: 96
+
+elementnum: 92
+capacity: 96
+
+elementnum: 93
+capacity: 96
+
+elementnum: 94
+capacity: 96
+
+elementnum: 95
+capacity: 96
+
+elementnum: 96
+capacity: 96
+
+elementnum: 97
+capacity: 192
+
+elementnum: 98
+capacity: 192
+
+elementnum: 99
+capacity: 192
+
+elementnum: 100
+capacity: 192
+
+elementnum: 101
+capacity: 192
+
+elementnum: 102
+capacity: 192
+
+elementnum: 103
+capacity: 192
+
